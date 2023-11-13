@@ -27,9 +27,6 @@ const userSchema = new Schema(
       type: String,
       default: "",
     },
-    avatarURL: {
-      type: String,
-    },
   },
   { versionKey: false, timestamps: true }
 );
@@ -40,7 +37,6 @@ const registerSchema = Joi.object({
   password: Joi.string().required(),
   email: Joi.string().pattern(emailRegexp).required(),
   subscription: Joi.string(),
-  avatarURL: Joi.string(),
 });
 
 const loginSchema = Joi.object({
